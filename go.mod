@@ -1,4 +1,4 @@
-module simple-go-api
+module get-getById-with-clean-architecture
 
 go 1.25.4
 

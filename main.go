@@ -1,22 +1,20 @@
 package main
 
 import (
+	"get-getById-with-clean-architecture/handler"
+	"get-getById-with-clean-architecture/routes"
+	"get-getById-with-clean-architecture/repository"
+
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 func main(){
-	r := gin.Default() // create a router
+	r := gin.Default()
+	
+	userRepository := repository.NewUserRepository()
+	userHandler := handler.NewUserHandler(userRepository)
 
-	// simple GET API
-	r.GET("/user", func(c *gin.Context) {
-		user := map[string]interface{}{
-			"id":   1,
-			"name": "Fahim",
-			"age":  25,
-		}
-		c.JSON(http.StatusOK, user)
-	})
+	router.RegisterRoutes(r, userHandler)
 
 	// run server on port 8080
 	r.Run(":8080")
