@@ -1,0 +1,10 @@
+#initial mod file => for track package
+    go mod init example/hello
+
+#run project
+    go run .
+    or,
+    go run ./main.go
+
+#install extra packages
+    go mod tidy
