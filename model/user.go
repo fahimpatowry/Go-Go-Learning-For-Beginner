@@ -1,8 +1,9 @@
 package model
 
-type User struct{
-	ID int `json:"id"`
+
+type User struct {
+	ID   uint   `json:"id" gorm:"primaryKey"`
 	Name string `json:"name"`
-	Age int `json: "age"`
+	Age  int    `json:"age"`
 }
 
