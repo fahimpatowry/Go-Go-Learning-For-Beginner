@@ -146,5 +146,30 @@ slices:
     .var index int = 2
 	 courses = append(courses[:index], courses[index+1:]...)
 
+// =============================
+map:
+    .languages := make(map[string]string)
+    .languages["JS"] = "javascript"
+    .fmt.Println(languages)
+	 fmt.Println(languages["JS"])
+    .delete(languages, "SW")
+    .for key, value := range languages {
+		fmt.Printf("For key %v, value is %v \n", key, value)
+		// fmt.Println(key, ":", value)
+	}
 
-
+// =============================
+struct:
+    .no inheritance in golang; No Super or parent
+    
+    type User struct {
+        Name   string
+        Email  string
+        Status bool
+        Age    int
+    }
+    .fahim := User{"fahim", "fahim@go.dev", true, 21}
+    .fmt.Println(fahim)
+     fmt.Println(fahim)
+	 fmt.Printf("fahim details are: %+v \n", fahim)
+	 fmt.Printf("Name is: %v \n", fahim.Name)
