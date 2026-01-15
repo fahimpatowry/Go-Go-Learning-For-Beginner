@@ -140,3 +140,11 @@ slices:
 
     .sort.Ints(highScores)
     .fmt.Println(sort.IntsAreSorted(highScores))
+
+    remove item:
+    .var courses = []string{"reactjs", "javascript", "swift", "python", "ruby", "go"}
+    .var index int = 2
+	 courses = append(courses[:index], courses[index+1:]...)
+
+
+

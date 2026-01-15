@@ -32,7 +32,10 @@ func main() {
 	fmt.Println(highScores)
 	fmt.Println(sort.IntsAreSorted(highScores))
 
-	// var vagList = [3]string{"portato", "beans", "mushroom"}
-	// fmt.Println(vagList)
-
+	//  how to remove a value form slices based on index
+	var courses = []string{"reactjs", "javascript", "swift", "python", "ruby", "go"}
+	fmt.Println("courses", courses)
+	var index int = 2
+	courses = append(courses[:index], courses[index+1:]...)
+	fmt.Println("courses", courses)
 }
