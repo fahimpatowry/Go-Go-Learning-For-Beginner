@@ -203,3 +203,53 @@ switch-case:
 	default:
 		fmt.Println("What was that!")
 	}
+
+// =============================
+loop:
+    .days := []string{"Sunday", "Tuesday", "Wednesday", "Friday", "Saturday"}
+    .for d := 0; d < len(days); d++ {
+        fmt.Println(days[d])
+    }
+    .for index, day := range days {
+        fmt.Printf("index is %v and value is %v \n", index, day)
+    }
+    .for i := range days {
+        fmt.Println(days[i])
+    }
+    .rougeValue := 1
+	for rougeValue < 10 {
+		if rougeValue == 3 {
+			goto lco
+		}
+		// if rougeValue == 4 {
+		// 	rougeValue++
+		// 	break
+		// }
+		// if rougeValue == 5 {
+		// 	rougeValue++
+		// 	continue
+		// }
+		fmt.Println("value is: ", rougeValue)
+		rougeValue++
+	}
+    lco:
+	fmt.Println("jump")
+
+// =============================
+function:
+    .func greeter() {
+        fmt.Println("Hello!")
+    }
+    .func adder(valueOne int, valueTow int) int { //int is function signeture
+        return valueOne + valueTow
+    }
+    .func proAdder(values ...int) (int, string) { //int is function signeture
+        total := 0
+        return total, "hi"
+    }
+
+
+
+
+
+
