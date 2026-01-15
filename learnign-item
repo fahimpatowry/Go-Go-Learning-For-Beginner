@@ -1,13 +1,12 @@
-
 complied
 java - interpireted
 
 complied:
-.Go tool can run file directly, with out VM
-.Executable are different fo os
+    .Go tool can run file directly, with out VM
+    .Executable are different fo os
 
 What:
-.system apps to web apps-cloud
+    .system apps to web apps-cloud
 
 don-t bring baggage:
 object oriented
@@ -17,8 +16,8 @@ missing:
     .lexer does a lot of work
 
 go mod commend/file: 
-gpo mod init github.com/fahim/hello
-vs code extension: go, 
+    gpo mod init github.com/fahim/hello
+    vs code extension: go, 
 
 // =============================
 help commend in terminal
@@ -161,7 +160,7 @@ map:
 // =============================
 struct:
     .no inheritance in golang; No Super or parent
-    
+
     type User struct {
         Name   string
         Email  string
@@ -173,3 +172,34 @@ struct:
      fmt.Println(fahim)
 	 fmt.Printf("fahim details are: %+v \n", fahim)
 	 fmt.Printf("Name is: %v \n", fahim.Name)
+
+// =============================
+if-else:
+     if loginCount < 10 {
+		result = "Regular user"
+	} else if loginCount > 10 {
+		result = "Watch out"
+	} else {
+		result = "This is exactly 10"
+	}
+
+// =============================
+switch-case:
+    switch diceNumber {
+	case 1:
+		fmt.Println("Dice move to 1 and you can open")
+	case 2:
+		fmt.Println("Dice move to 2 spot")
+		fallthrough // will consider next case also
+	case 3:
+		fmt.Println("Dice move to 3 spot")
+		fallthrough // will consider next case also
+	case 4:
+		fmt.Println("Dice move to 4 spot")
+	case 5:
+		fmt.Println("Dice move to 5 spot")
+	case 6:
+		fmt.Println("Dice move to 6 spot")
+	default:
+		fmt.Println("What was that!")
+	}
