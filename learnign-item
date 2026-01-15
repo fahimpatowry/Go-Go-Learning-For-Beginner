@@ -85,6 +85,58 @@ comma ok || err ok syntax:
 	._, error := reader.ReadString('\n')
 	.input, error := reader.ReadString('\n')
 
+// =============================
+Date function:
+    .presentTime := time.Now()
+    .fmt.Println(presentTime.Format("01-02-2006 15:04:05 Monday"))
+    .createdDate := time.Date(2020, time.September, 10, 23, 20, 0, 0, time.UTC)
 
+// =============================
+Build for windows and linux
+    .go env (commend)
+    .GOOS="windows" go build
+    .GOOS="linux" go build
 
+// =============================
+Memory Management
+    .GC happens automatically (garbase collection)
+    .out of scope or nill
+    .pkg.go.dev.runtime
+    .new()
+    .Allocate memory but no init
+    .you will get a memory address
+    .zeroed storage
+    .make()
+    .Allocate memory but init
+    .you will get a memory address
+    .non-zeroed storage
 
+// =============================
+pointer
+    .myNumber := 23
+	 var ptr = &myNumber // reference means &
+    .fmt.Println(ptr) // print memory address
+	 fmt.Println(*ptr) // print value
+    .*ptr = *ptr * 2
+
+// =============================
+array:
+    .var fruitList [4]string
+     fruitList[0] = "Apple"
+    .var vagList = [3]string{"portato", "beans", "mushroom"}
+    .fmt.Println(len(fruitList))
+
+// =============================
+slices:
+    .var fruitList = []string{}
+    .fruitList = append(fruitList, "Mango", "Banana", "Mango1", "Banana1")
+    .fruitList = append(fruitList[1:3])
+    .fruitList = append(fruitList[:3])
+    .fruitList = append(fruitList[1:])
+
+    .highScores := make([]int, 4)
+    .highScores[0] = 234, highScores[1] = 245, highScores[2] = 234, highScores[3] = 238,
+    .highScores = append(highScores, 555, 66, 321)
+
+    .sort.Ints(highScores)
+    .fmt.Println(sort.IntsAreSorted(highScores))
