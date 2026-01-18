@@ -269,6 +269,39 @@ file:
     .dataByte, err := ioutil.ReadFile(fileName) // read date from file
     .string(dataByte) // convert the byte data in sting
 
+// =============================
+web request:
+    .const url = "https://chatgpt.com"\
+    .response, err := http.Get(url)
+    .defer response.Body.Close()
+    .dataByte, err1 := ioutil.ReadAll(response.Body)
+    .content := string(dataByte)
+	 fmt.Printf(content)
+
+// =============================
+url:
+    .const myurl = "http://10.70.57.33:3000/test?id=4534&key=343"
+    .result, _ := url.Parse(myurl)
+    .fmt.Println(result)
+	.fmt.Println(result.Scheme) // https
+	.fmt.Println(result.Host)
+	.fmt.Println(result.Path)
+	.fmt.Println(result.Port())
+	.fmt.Println(result.RawQuery)
+    
+    .qparams := result.Query()
+	.fmt.Println(qparams)
+	.fmt.Println(qparams["key"])
+	.fmt.Printf("The type of query are: %T \n", qparams)
+
+    .partsOfUrls := &url.URL{
+		Scheme:   "https",
+		Host:     "fahim.dev",
+		RawPath:  "/test",
+		RawQuery: "id=dfsfs",
+	 }
+    .anotherUrl := partsOfUrls.String()
+	 fmt.Println(anotherUrl)
 
 
 
