@@ -303,6 +303,30 @@ url:
     .anotherUrl := partsOfUrls.String()
 	 fmt.Println(anotherUrl)
 
+// =============================
+how to make a get request:
+    .const myurl = "http://10.70.57.33:3000"
+    .res, err := http.Get(myurl)
+    .defer res.Body.Close()
 
+    .var responseString strings.Builder
+	 content, _ := ioutil.ReadAll(res.Body)
+	 byteCount, _ := responseString.Write(content)
+    //  fmt.Println(string(byteCount))
+     fmt.Println(responseString.String())
+
+// =============================
+how to make a post request:
+    .const myurl = "http:localhost:8000/post"
+    .requestBody := strings.NewReader(`
+	 {
+		"coursename":"let's go with golan",
+		"price": 0,
+		"platfrom": "fahim.com"
+	 }`)
+    .res, err := http.Post(myurl, "application/json", requestBody)
+    .defer res.Body.Close()
+    .content, _ := ioutil.ReadAll(res.Body)
+    .fmt.Println(string(content))
 
 
