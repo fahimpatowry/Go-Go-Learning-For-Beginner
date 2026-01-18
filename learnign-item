@@ -261,6 +261,13 @@ defer:
     .if have multiple defer it will call last one first(first in last out)
     .defer fmt.Println("w1")
 
+// =============================
+file:
+    .file, err := os.Create("./mycogofile.txt") // crete file
+    .length, err1 := io.WriteString(file, content) // write file
+    .defer file.Close() // close file after done
+    .dataByte, err := ioutil.ReadFile(fileName) // read date from file
+    .string(dataByte) // convert the byte data in sting
 
 
 
