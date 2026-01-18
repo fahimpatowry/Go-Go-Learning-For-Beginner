@@ -248,6 +248,19 @@ function:
         return total, "hi"
     }
 
+// =============================
+method:
+    .func (u User) NewMail() {
+        u.age = 30
+        // fmt.Println("Is user age:", u.age)
+    }
+
+// =============================
+defer:
+    .defer will call end of the carly braket({})
+    .if have multiple defer it will call last one first(first in last out)
+    .defer fmt.Println("w1")
+
 
 
 
