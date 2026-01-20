@@ -329,4 +329,54 @@ how to make a post request:
     .content, _ := ioutil.ReadAll(res.Body)
     .fmt.Println(string(content))
 
+// =============================
+create JSON Data:
+    .type course struct {
+        Name     string   `json:"coursename"`
+        Price    int      `json:"price"`
+        Platform string   `json:"website"`
+        Password string   `json:"-"` // - will decide this will not show in json
+        Tags     []string `json:"tags,omitempty"`
+     }
+    .lcoCourses := []course{
+		{"ReactJS Bootcamp", 255, "fahim.com", "abc12", []string{"web-dev", "js"}},
+		{"MEARN Bootcamp", 450, "fahim.com", "abc12", []string{"web-full", "js"}},
+		{"ANGULER Bootcamp", 50, "fahim.com", "abc12", nil},
+	 }
+    .finalJson, err := json.MarshalIndent(lcoCourses, "", "\t")
+
+// =============================
+consumes JSON Data:
+    .jsonDateFromWeb := []byte(`
+	{
+		"coursename": "MEARN Bootcamp",
+		"price": 450,
+		"website": "je.com",
+		"tags": ["fahim.com","js"]
+	}
+	`)
+    .var lcoCourse course
+	.checker := json.Valid(jsonDateFromWeb)
+    .json.Unmarshal(jsonDateFromWeb, &myOnlineData)
+    .for k, v := range myOnlineData {
+		fmt.Printf("key is %v and value %v and type is: %T \n", k, v, v)
+	 }
+
+// =============================
+mod long discussion:
+    .sematic versioning 1.0.0
+    .version after 1.11 and 1.12
+    ."sum" file for sequrity it chek code accoding to veriosn and git branch
+    ."indirect" why?
+    .go mod tidy
+    .go mod verify
+    .go lis
+    .go lis all
+    .go list -m all
+    .go list -m -versions github.com/gorilla/mux // check verssion of package
+    .go mod why github.com/gorilla/mux
+    .go mod edit -go 116
+    .go mod vendor // like module file in nodejs, react js
+    .go run -mod=vendor main.go
+    .https://github.com/gorilla/mux
 
