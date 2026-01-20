@@ -379,4 +379,12 @@ mod long discussion:
     .go mod vendor // like module file in nodejs, react js
     .go run -mod=vendor main.go
     .https://github.com/gorilla/mux
+// =============================
+mongo:
+    ."mongo orm "no need
+    .https://go.mongodb.org/
 
+    .sing in Mnhobd site
+    .create  project
+    .create cluster / database
+    .connect with user and passward
