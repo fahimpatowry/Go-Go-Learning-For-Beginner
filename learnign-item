@@ -379,6 +379,7 @@ mod long discussion:
     .go mod vendor // like module file in nodejs, react js
     .go run -mod=vendor main.go
     .https://github.com/gorilla/mux
+
 // =============================
 mongo:
     ."mongo orm "no need
@@ -388,3 +389,18 @@ mongo:
     .create  project
     .create cluster / database
     .connect with user and passward
+
+// =============================
+concurrency vs parallelism:
+    .concurrency one task at a time
+    .parallelism multiple tasks at once
+
+Thread vs goroutine:
+    .thread magage by OS
+    .thread fixed stake 1 mb
+    .goroutine magage by go runtime
+    .goroutine default stake 2 kb
+    .threading is heavy weight
+    .goroutine is light weight
+
+Do not communicate by sharing memory; instead, share memory by communicating

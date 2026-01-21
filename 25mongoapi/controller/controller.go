@@ -119,7 +119,7 @@ func getAll() []primitive.M {
 
 	var movies []primitive.M
 	for cur.Next(context.Background()) {
-		var movie bson.M
+		var movie primitive.M
 		err := cur.Decode(&movie)
 		if err != nil {
 			log.Fatal(err)
@@ -136,7 +136,7 @@ func getAll() []primitive.M {
 }
 
 // Actual controller -file
-func GetAll(w http.ResponseWriter, r *http.Request) {
+func GetAllMovies(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Context-type", "application/x-ww-from-urlencode")
 
 	allMovies := getAll()
